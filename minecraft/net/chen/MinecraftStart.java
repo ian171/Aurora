@@ -1,7 +1,6 @@
 package net.chen;
 
 import de.florianmichael.viamcp.ViaMCP;
-import net.chen.config.Config;
 import net.chen.config.ConfigLoader;
 import net.optifine.Log;
 import org.lwjgl.opengl.Display;
@@ -25,13 +24,9 @@ public class MinecraftStart {
         } catch (Exception e) {
             Log.log(e.getMessage());
         }
-
         ConfigLoader cfgLoader = new ConfigLoader();
         cfgLoader.makeDir();
         cfgLoader.makeConfig();
         cfgLoader.loadConfig();
-
-        Config config = new Config();
-
     }
 }

@@ -43,7 +43,6 @@
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/twitch-platform-6.5-natives-windows-64.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/twitch-external-platform-4.5-natives-windows-64.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/lwjgl-platform-2.9.4-nightly-20150209-natives-windows.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/annotations/24.0.0/annotations-24.0.0.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

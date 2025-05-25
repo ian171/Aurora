@@ -3,7 +3,7 @@ package net.minecraft.client.renderer.texture;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import net.minecraft.client.resources.IResourceManager;
-import org.jetbrains.annotations.NotNull;
+
 
 public class DynamicTexture extends AbstractTexture
 {
@@ -11,7 +11,7 @@ public class DynamicTexture extends AbstractTexture
     private final int width;
     private final int height;
 
-    public DynamicTexture(@NotNull BufferedImage bufferedImage)
+    public DynamicTexture(BufferedImage bufferedImage)
     {
         this(bufferedImage.getWidth(), bufferedImage.getHeight());
         bufferedImage.getRGB(0, 0, bufferedImage.getWidth(), bufferedImage.getHeight(), this.dynamicTextureData, 0, bufferedImage.getWidth());

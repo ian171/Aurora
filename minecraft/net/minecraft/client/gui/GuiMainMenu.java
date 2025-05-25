@@ -15,6 +15,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 import de.florianmichael.viamcp.ViaMCP;
 import de.florianmichael.viamcp.gui.GuiProtocolSelector;
 import net.chen.MinecraftStart;
+import net.chen.gui.GuiConfig;
+import net.chen.util.ModernButton;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.OpenGlHelper;
@@ -197,6 +199,7 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback
 
         this.buttonList.add(new GuiButton(0, this.width / 2 - 100, j + 72 + 12, 98, 20, I18n.format("menu.options", new Object[0])));
         this.buttonList.add(new GuiButton(4, this.width / 2 + 2, j + 72 + 12, 98, 20, I18n.format("menu.quit", new Object[0])));
+        this.buttonList.add(new ModernButton(10, this.width / 2 - 100, j + 72 - 24, 98, 20, "Configs"));
         this.buttonList.add(new GuiButtonLanguage(5, this.width / 2 - 124, j + 72 + 12));
 
         synchronized (this.threadLock)
@@ -258,6 +261,9 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback
 
     protected void actionPerformed(GuiButton button) throws IOException
     {
+        if (button.id == 10){
+            this.mc.displayGuiScreen(new GuiConfig());
+        }
         if (button.id == 0)
         {
             this.mc.displayGuiScreen(new GuiOptions(this, this.mc.gameSettings));
@@ -618,7 +624,7 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback
             this.drawString(this.fontRendererObj, s, 2, this.height - 10, -1);
         }
 
-        String s2 = "Copyright Mojang AB. Do not distribute!";
+        String s2 = "All based on Vanilla";
         this.drawString(this.fontRendererObj, s2, this.width - this.fontRendererObj.getStringWidth(s2) - 2, this.height - 10, -1);
 
         if (this.openGLWarning1 != null && this.openGLWarning1.length() > 0)
